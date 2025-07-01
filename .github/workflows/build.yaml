@@ -11,13 +11,15 @@ name: Build
     #   - '*'
   'pull_request':
 
+
+permissions:
+  contents: write
+  pull-requests: write
+  repository-projects: write
+
 jobs:
   tests:
     runs-on: ${{ matrix.os }}
-    permissions:
-      contents: write
-      pull-requests: write
-      repository-projects: write
     strategy:
       matrix:
         os:
